@@ -1,4 +1,4 @@
-# Exercícios – Módulo 4
+# Exercícios
 
 1. Escreva um programa que receba um número inteiro do usuário e imprima *True* caso o número seja *par* e *False*, caso o número seja ímpar.
 2. O que vai ser impresso na tela ao executar o programa abaixo? (são 2 `prints`!)
