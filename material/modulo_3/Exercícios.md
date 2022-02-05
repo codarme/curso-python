@@ -19,7 +19,4 @@
     1. O valor final das compras, considerando o desconto aplicado.
     2. O custo médio de cada item (considerando o valor final das compras).
     
-    <aside>
-    💡 Lembre que podemos utilizar símbolos como `+ - * /` para fazer cálculos em Python.
-    
-    </aside>
+    > 💡 Lembre que podemos utilizar símbolos como `+ - * /` para fazer cálculos em Python.
