@@ -7,6 +7,9 @@ class Evento(models.Model):
     local = models.CharField(blank=True, max_length=256)
     link = models.URLField(blank=True, max_length=256)
 
+    def __str__(self) -> str:
+        local = self.local or self.link
+        return f"{self.__class__.__name__}<{self.id}>: {self.nome} ({self.categoria.nome}) – {local}"
 
 class Categoria(models.Model):
     CATEGORIAS = [
@@ -17,3 +20,6 @@ class Categoria(models.Model):
     ]
 
     nome = models.CharField(unique=True, max_length=256, choices=CATEGORIAS)
+
+    def __str__(self) -> str:
+        return f"{self.__class__.__name__}<{self.id}>: {self.nome}"

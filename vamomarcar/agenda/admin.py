@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from agenda.models import Evento, Categoria
+# Também podemos usar import relativo
+# from .models import Evento, Categoria
+
+admin.site.register(Evento)
+admin.site.register(Categoria)
