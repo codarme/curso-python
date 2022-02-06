@@ -1,12 +1,13 @@
-from django.http.response import HttpResponse
-from agenda.seed import eventos
+from django.shortcuts import render
+from agenda.models import Evento
+
+
+aula_python = Evento(nome="Aula de Python", categoria="Backend", local="Rio de Janeiro")
+aula_js = Evento(nome="Aula de JavaScript", categoria="Fullstack", link="http://tamarcado.com/js")
+eventos = [
+    aula_python,
+    aula_js,
+]
 
 def exibir_evento(request):
-    return HttpResponse(f"""
-    <html>
-        <h1>Evento: {eventos[0].nome}</h1>
-        <p>Categoria: {eventos[0].categoria}</p>
-        <p>Local: {eventos[0].local}</p>
-        <p>Link: {eventos[0].link}</p>
-    <html>
-    """)
+    return render(request, "agenda/exibir_evento.html", context={"evento": eventos[0]})
