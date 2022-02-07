@@ -1,13 +1,11 @@
+from django.http.response import Http404
 from django.shortcuts import render
 from agenda.models import Evento
 
 
-aula_python = dict(nome="Aula de Python", categoria="Backend", local="Rio de Janeiro")
-aula_js = dict(nome="Aula de JavaScript", categoria="Fullstack", link="http://tamarcado.com/js")
-eventos = [
-    aula_python,
-    aula_js,
-]
-
-def exibir_evento(request):
-    return render(request, "agenda/exibir_evento.html", context={"evento": eventos[0]})
+def exibir_evento(request, id):
+    try:
+        evento = Evento.objects.get(id=id)
+    except Evento.DoesNotExist:
+        raise Http404("Evento não existe")
+    return render(request, "agenda/exibir_evento.html", context={"evento": evento})

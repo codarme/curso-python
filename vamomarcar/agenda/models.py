@@ -6,6 +6,7 @@ class Evento(models.Model):
     categoria = models.ForeignKey("Categoria", on_delete=models.SET_NULL, null=True)
     local = models.CharField(blank=True, max_length=256)
     link = models.URLField(blank=True, max_length=256)
+    data = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:
         local = self.local or self.link
