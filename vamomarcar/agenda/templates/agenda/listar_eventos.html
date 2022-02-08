@@ -1,0 +1,22 @@
+<html>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Local/Link</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for evento in eventos %}
+            <tr>
+                <td>{{ evento.nome }}</td>
+                <td>{{ evento.categoria.nome }}</td>
+                <td>{% firstof evento.link evento.local %}</td>
+                <td>{{ evento.data | date:"d/m/Y" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<html>
