@@ -1,3 +1,4 @@
+from datetime import date
 from django.http.response import Http404
 from django.shortcuts import render
 from agenda.models import Evento
@@ -12,5 +13,14 @@ def exibir_evento(request, id):
 
 
 def listar_eventos(request):
-    eventos = Evento.objects.all()
+    # filter vai incluir apenas os objetos que atendam aos critérios do filtro
+    # eventos = Evento.objects.filter(
+    #     data__gte=date.today()
+    # )
+
+    # exclude vai remover os objetos que atendam aos critérios do filtro
+    eventos = Evento.objects.exclude(
+        data__lte=date.today()
+    ).order_by("data")
+
     return render(request, "agenda/listar_eventos.html", context={"eventos": eventos})
