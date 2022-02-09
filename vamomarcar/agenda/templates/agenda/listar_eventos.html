@@ -6,6 +6,7 @@
                 <th>Categoria</th>
                 <th>Local/Link</th>
                 <th>Data</th>
+                <th>Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -15,6 +16,7 @@
                 <td>{{ evento.categoria.nome }}</td>
                 <td>{% firstof evento.link evento.local %}</td>
                 <td>{{ evento.data | date:"d/m/Y" }}</td>
+                <td><a href="{% url 'exibir_evento' evento.id %}">Ver detalhes</a></td>
             </tr>
             {% endfor %}
         </tbody>
