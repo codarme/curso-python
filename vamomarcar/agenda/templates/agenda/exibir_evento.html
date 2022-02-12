@@ -4,6 +4,12 @@
     {% if evento.local %}<p>Local: {{ evento.local }}</p>{% endif %}
     {% if evento.link %}<p>Link: {{ evento.link }}</p>{% endif %}
     <p>Data: {% if evento.data %}{{ evento.data | date:"d/m/Y"}}{% else %} a definir.{% endif %}</p>
+    <p>Quantidade de participantes: {{ evento.participantes }}
     <br />
-    <p><a href="{% url 'listar_eventos' %}">Ir para listagem de eventos</p>
+    <form action="{% url 'participar_de_evento' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="evento_id" value="{{ evento.id}}">
+        <input type="submit" value="Participar">
+    </form>
+    <p><a href="{% url 'listar_eventos' %}">Ir para listagem de eventos</a></p>
 <html>

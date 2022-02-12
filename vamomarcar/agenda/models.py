@@ -7,6 +7,7 @@ class Evento(models.Model):
     local = models.CharField(blank=True, max_length=256)
     link = models.URLField(blank=True, max_length=256)
     data = models.DateField(null=True, blank=True)
+    participantes = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         local = self.local or self.link
