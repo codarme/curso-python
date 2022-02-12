@@ -21,7 +21,7 @@ def listar_eventos(request):
 
     # exclude vai remover os objetos que atendam aos critérios do filtro
     eventos = Evento.objects.exclude(
-        data__lte=date.today()
+        data__lt=date.today()
     ).order_by("data")
 
     return render(request, "agenda/listar_eventos.html", context={"eventos": eventos})
