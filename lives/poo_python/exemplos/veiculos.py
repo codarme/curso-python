@@ -7,7 +7,7 @@ from typing import Type
 class Veiculo(ABC):
     def __init__(self, modelo, ano, fabricante):
         self.modelo = modelo
-        self._ano = ano
+        self.ano = ano
         self.fabricante = fabricante
         self.posicao = 0
         self.velocidade = 0
@@ -63,9 +63,9 @@ class Carro(Veiculo):
 
     @ano.setter
     def ano(self, valor):
-        if valor > date.today().ano:
+        if valor > date.today().year:
             return
-        self.ano = valor
+        self._ano = valor
 
 
 class Moto(Veiculo):
