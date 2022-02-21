@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from datetime import date
 from typing import Type
 
-from lives.poo_python.veiculos import Carro, Moto, Veiculo, Bicicleta
+from veiculos import Carro, Moto, Veiculo, Bicicleta
 
 
 class Corrida:
