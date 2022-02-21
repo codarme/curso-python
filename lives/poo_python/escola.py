@@ -1,21 +1,39 @@
 """
-Esse é o modelo da nossa escola de programação.
-Nossa escola possui diversos Cursos e cada Curso pode ter múltiplas Turmas.
-Cada Turma tem uma data de início e data de fim.
-Turmas de um mesmo Curso não podem ocorrer entre as mesmas datas.
-Usuários podem se matricular em um determinado Curso.
-A matrícula de um Usuário em um Curso cria um Aluno associado ao Usuário e à Turma na qual ele foi matriculado.
-A Turma é selecionada automaticamente, de acordo com a lógica de matrícula.
-Toda Turma tem um limite máximo de alunos matriculados nela.
-Alunos podem ser removidos de uma Turma.
-Alunos só podem ser matriculados em um Curso se houverem Turmas "disponíveis" para aquele Curso.
-Uma Turma é considerada disponível se: ainda não foi iniciada e não está cheia (limite de alunos).
+ESCOLA DE PROGRAMAÇÃO
+======================
 
-Aulas podem estar publicadas ou não. 
-Todo Curso possui uma grade que é expressa através de uma lista de Aulas.
-A grade do Curso pode estar sob construção e ser vazia.
-Aulas podem ser adicionadas ao Curso depois que este foi criado.
-A mesma Aula pode ser parte de cursos diferentes.
+# Cursos e matrícula
+* Nossa escola possui diversos Cursos e cada Curso pode ter múltiplas Turmas.
+* Usuários podem se matricular em um ou mais Cursos.
+    * Essa matrícula gera um Aluno associado ao Usuário e à Turma na qual ele foi matriculado.
+    * A Turma 
+    * Alunos podem ser removidos de uma Turma.
+
+
+# Turmas
+* Cada Turma tem uma data de início e data de fim.
+    * Turmas de um mesmo Curso não podem ocorrer durante as mesmas datas.
+* Toda Turma tem um limite máximo de alunos matriculados nela.
+* Alunos só podem ser matriculados em um Curso se houverem Turmas "disponíveis" para aquele Curso.
+* Uma Turma é considerada disponível se: ainda não foi iniciada e não está cheia (limite de alunos).
+
+
+# Aulas
+* Todo Curso possui uma grade que é expressa através de uma lista ordenada de Aulas.
+* Aulas podem estar publicadas ou não. 
+* A grade do Curso (lista de aulas) pode ser vazia (sob construção).
+* Aulas podem ser adicionadas a um curso apenas se estiverem publicadas.
+* Para publicar uma aula é necessário que ela possua pelo menos 1 conteúdo (ConteudoAula).
+* A mesma Aula pode estar presente em duas grades.
+
+
+# Conteúdo
+* Um Conteúdo pode ser um Vídeo, Texto ou Áudio.
+
+
+# Extras
+* Administrador: usuários que possuem acesso para editar o curso, matricular e remover alunos.
+* Progresso: como saber quais conteúdos um determinado aluno assistiu?
 """
 
 class Usuario:
