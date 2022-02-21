@@ -26,9 +26,9 @@
     ```python
     # Alunos e suas respectivas notas
     alunos = [
-    	("Alice", 8),
-    	("Bob", 7),
-      ("Carlos", 9),
+        ("Alice", 8),
+        ("Bob", 7),
+        ("Carlos", 9),
     ]
     ```
     
@@ -39,18 +39,18 @@
     ```python
     # Alunos e suas notas representados através de dicionários
     alunos = [
-    	{
-    		"nome": "Alice",
-    		"nota": 8,
-    	},
-    	{
-    		"nome": "Bob",
-    		"nota": 7,
-    	},
-    	{
-    		"nome": "Carlos",
-    		"nota": 9,
-    	}
+        {
+            "nome": "Alice",
+            "nota": 8,
+        },
+        {
+            "nome": "Bob",
+            "nota": 7,
+        },
+        {
+            "nome": "Carlos",
+            "nota": 9,
+        }
     ]
     ```
     
@@ -68,7 +68,7 @@
     
     ```python
     for x in "abc":
-    		print(x)
+        print(x)
     # Vai imprimir:
     # a
     # b
@@ -82,8 +82,8 @@
     # O resultado deve ser
     {
         'a': 3,
-    		'b': 1,
-    		'n': 2
+        'b': 1,
+        'n': 2
     }
     ```
     
