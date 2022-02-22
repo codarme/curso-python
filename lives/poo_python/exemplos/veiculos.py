@@ -12,7 +12,7 @@ class Veiculo(ABC):
         self.posicao = 0
         self.velocidade = 0
         self.combustivel = 0
-        super().__init__()
+        super().__init__()  # Preica
     
     @abstractmethod
     def acelerar(self, intensidade):
@@ -22,7 +22,7 @@ class Veiculo(ABC):
 class Carro(Veiculo):
     def __init__(self, modelo, ano, fabricante):
         super().__init__(modelo, ano, fabricante)
-        self.portas = {
+        self.portas = {  # Atributo que apenas instâncias de Carro têm.
             0: False,
             1: False,
             2: False,
@@ -34,37 +34,41 @@ class Carro(Veiculo):
         if self.combustivel <= 0:
             return
         
-        if intensidade < 1:  # Não pisou o suficiente no acelerador
+        if intensidade < 1:  # Não pisou o suficiente no acelerador.
             return
         elif intensidade < 2:
             self.combustivel -= 1
             self.velocidade += 10
-        else:  # Intensidade alta
+        else:  # Intensidade alta.
             self.combustivel -= 2
             self.velocidade += 20
 
         self.posicao += self.velocidade
         print(f"Nova posição do carro: {self.posicao}")
 
-    def abrir_porta(self, num_porta):
+    def abrir_porta(self, num_porta):  # Específico de carros
         self.portas[num_porta] = True
 
-    def fechar_porta(self, num_porta):
+    def fechar_porta(self, num_porta):  # Específico de carros
         self.portas[num_porta] = False
 
     @property
     def parado(self):
+        # Para quem "usar" a classe Carro sem ver a implementação, não vai saber que "parado" não é um atributo.
+        # Inclusive, se tentar fazer "carro.parado = 10", vai receber um erro.
         return self.velocidade == 0
 
     @property
     def ano(self):
-        return self._ano
+        # Toda vez que carro.ano é acessado, esse método é executado.
+        return self._ano  # Por que não simplesmente "return self.ano"?
 
     @ano.setter
-    def ano(self, valor):
+    def ano(self, valor):  
+        # Toda vez que fizermos carro.ano = valor, esse método que vai ser chamado.
         if valor > date.today().year:
-            return
-        self._ano = valor
+            return  # Não permite alterar o ano para o futuro.
+        self._ano = valor  # Para refletir: por que não fiz "self.ano = valor" (ao invés de "self._ano")
 
 
 class Moto(Veiculo):
@@ -87,6 +91,6 @@ class Moto(Veiculo):
         print(f"Nova posição da moto: {self.posicao}")
 
 
-class Bicicleta:  # Não herda de veículo, mas tem "acelerar"
+class Bicicleta:  # Não herda de veículo, mas tem "acelerar".
     def acelerar(self, intensidade):
         print("Acelerando bicicleta....")
