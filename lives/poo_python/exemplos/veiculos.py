@@ -30,22 +30,21 @@ class Carro(Veiculo):
         }
 
     def acelerar(self, intensidade):
-        if not self.combustivel > 0:
+        print(f"Acelerando carro com intensidade: {intensidade}")
+        if self.combustivel <= 0:
             return
-
-        if intensidade == 1:
+        
+        if intensidade < 1:  # Não pisou o suficiente no acelerador
+            return
+        elif intensidade < 2:
             self.combustivel -= 1
             self.velocidade += 10
-        elif intensidade == 2:
+        else:  # Intensidade alta
             self.combustivel -= 2
-            self.velocidade == 20
-        elif intensidade == 3:
-            self.combustivel -= 3
-            self.velocidade == 30
-        else:
-            return
+            self.velocidade += 20
 
         self.posicao += self.velocidade
+        print(f"Nova posição do carro: {self.posicao}")
 
     def abrir_porta(self, num_porta):
         self.portas[num_porta] = True
@@ -69,10 +68,25 @@ class Carro(Veiculo):
 
 
 class Moto(Veiculo):
-    pass
+    def acelerar(self, intensidade):
+        print(f"Acelerando moto com intensidade: {intensidade}")
+        if self.combustivel <= 0:
+            return
+
+        if intensidade < 1:
+            return
+
+        if intensidade < 2:
+            self.combustivel -= 0.5  # Gasta menos que um carro!
+            self.velocidade += 20  # Acelera mais que o carro!
+        else:  # Só tem duas intensidades
+            self.combustivel -= 1
+            self.velocidade += 40
+
+        self.posicao += self.velocidade
+        print(f"Nova posição da moto: {self.posicao}")
 
 
 class Bicicleta:  # Não herda de veículo, mas tem "acelerar"
     def acelerar(self, intensidade):
         print("Acelerando bicicleta....")
-

@@ -17,7 +17,10 @@ class Corrida:
 
 carro = Carro("Fusca", 2020, "VW")
 moto = Moto("Biz", 2020, "Honda")
-bicicleta = Bicicleta()
+
+# Bicicleta não É um veículo, mas se comporta como um pois tem o método acelerar
+# "se anda que nem um pato, faz quack que nem um pato..."
+bicicleta = Bicicleta()  
 
 corrida = Corrida(veiculos=[carro, moto, bicicleta])
 corrida.iniciar()

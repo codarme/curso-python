@@ -27,3 +27,5 @@ class Vetor2D:
     def __bool__(self):
         return self.x != 0 or self.y != 0
     
+
+# Créditos: Python Fluente, Luciano Ramalho
