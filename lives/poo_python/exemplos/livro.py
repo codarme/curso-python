@@ -5,6 +5,8 @@ class Pagina:
     def ler(self):
         print(self.texto)
 
+    def __repr__(self) -> str:
+        return self.texto
 
 class Livro:
     def __init__(self, paginas):
@@ -34,3 +36,6 @@ paginas = [
 ]
 livro = Livro(paginas=paginas)
 livro.ler()
+print(f"Primeira página: {livro[0]}")
+print(f"Primeiras duas páginas: {livro[0:2]}")
+print(f"Tamanho do livro: {len(livro)}")
