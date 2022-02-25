@@ -86,9 +86,9 @@ Dicionários são estruturas que armazenam pares de chave-valor da seguinte mane
 
 ```python
 evento = {
-	"nome": "Aula de Python",
-	"data": "2022-02-07",
-	"limite_alunos": 40,
+    "nome": "Aula de Python",
+    "data": "2022-02-07",
+    "limite_alunos": 40,
 }
 
 print(evento["nome"])
@@ -106,10 +106,10 @@ Sintaxe do for:
 
 ```python
 for <elemento> in <estrutura que pode ser iterada>:
-		<instrução 1>
-		<instrução 2>
-		...
-		<instrução n>
+    <instrução 1>
+    <instrução 2>
+    ...
+    <instrução n>
 ```
 
 Exemplo `while` vs `for`
