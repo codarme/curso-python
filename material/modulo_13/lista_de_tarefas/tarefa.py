@@ -1,16 +1,20 @@
+# Test Driven Development: escrever os testes antes da nossa lógica.
+from datetime import timedelta
+
+
 class Tarefa:
-    def __init__(self, titulo, descricao="", data=None, notificacao=None, concluida=False):
+    def __init__(self, titulo, descricao="", data=None, data_notificacao=None):
         self.titulo = titulo
         self.descricao = descricao
         self.data = data
-        self.notificacao = notificacao
-        self.concluida = concluida
+        self.data_notificacao = data_notificacao
+        self.concluida = False
 
     def concluir(self):
         """
         Define essa tarefa como concluida.
         """
-        pass
+        self.concluida = True
 
     def adicionar_descricao(self, descricao):
         """
@@ -21,8 +25,15 @@ class Tarefa:
     def adiar_notificacao(self, minutos):
         """
         Adia a notificação em uma certa quantidade de minutos.
+
+        Notificacao: 25/02/2022, 14h30
+        adiar_notificacao(15)
+        => Notificacao: 25/02/2022, 14h45
         """
-        pass
+        if self.data_notificacao is None:
+            return
+
+        self.data_notificacao + timedelta(minutes=minutos)
 
     def atrasada(self):
         """

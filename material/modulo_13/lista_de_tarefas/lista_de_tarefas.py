@@ -11,14 +11,19 @@ class ListaDeTarefas:
         """
         Adiciona uma tarefa na lista (_tarefas.append).
         """
-        pass
+        self._tarefas.append(tarefa)
 
     def get_tarefas(self, incluir_concluidas=False):
         """
         Retorna lista de tarefas restantes.
         Se incluir_concluidas for passado como True, inclui as tarefas concluídas.
         """
-        pass
+        tarefas_nao_concluidas = []
+        for tarefa in self._tarefas:
+            if not tarefa.concluida:
+                tarefas_nao_concluidas.append(tarefa)
+        return tarefas_nao_concluidas
+
 
     def get_tarefas_atrasadas(self):
         """
