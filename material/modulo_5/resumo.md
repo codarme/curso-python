@@ -11,28 +11,28 @@ idade = int(input("Qual a sua idade?"))  # Aqui estamos transformando o input em
 if idade > 18:  # Se idade é maior que 18, execute o código "dentro" do "if"
     print("Você é um adulto(a)")
 elif idade >= 12:  # Se idade não é maior que 18 mas é maior ou igual a 12...
-		print("Você é um(a) adolescente!")
+    print("Você é um(a) adolescente!")
 elif idade >= 4:  # Podemos utilizar quantos elif's quisermos
-		print("Você é uma criança!")
+    print("Você é uma criança!")
 else:  # Nenhuma das condições acima foi considerada ***True***
-	  print("Você é um bebê.")
+    print("Você é um bebê.")
 ```
 
 Algumas linguagens utilizam `{  }` para identificar o **bloco de código** dentro de um `if/else` que tem que ser executado. Por exemplo, em *JavaScript*:
 
 ```jsx
-if (idade > 18) **{**
-		console.log(idade);
-**}** else **{**
-		console.log("Só falo com maiores de idade.");
-**}**
+if (idade > 18) {
+    console.log(idade);
+} else {
+    console.log("Só falo com maiores de idade.");
+}
 ```
 
 No caso, Python utiliza a identificação por **indentação,** logo, a quantidade de "espaços" antes de uma linha de código importa:
 
 ```python
 if (10 % 5 == 0):
-print("É divísivel")
+    print("É divísivel")
 ```
 
 Vai dar um erro se você tentar executar, dizendo que "espera-se um bloco indentado", ou seja, com tabulação/espaçamento para identificar o bloco de código a ser executado caso a expressão `(10 % 5 == 0 )` seja verdadeira.
@@ -50,8 +50,8 @@ A instrução `break` faz com que o programa "saia" de dentro do loop. Por exemp
 
 ```python
 while(True):
-		break  # vai parar aqui
-		print("Não vai imprimir isso na tela")
+    break  # vai parar aqui
+    print("Não vai imprimir isso na tela")
 print("Mas isso vai.")
 ```
 

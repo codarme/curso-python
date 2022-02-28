@@ -8,7 +8,7 @@ A sintaxe para definir uma função no Python é a seguinte.
 # Essa é uma função muito simples: recebe um valor e retorna o próprio valor.
 # equivalente a f(x) = x na matemática
 def f(x):
-		return x
+    return x
 
 print(f(10))  # Imprime 10 na tela
 ```
@@ -19,9 +19,9 @@ A função abaixo apenas imprime valores na tela e “não retorna valor algum�
 
 ```python
 def imprime_1_2_3():
-		print(1)
-		print(2)
-		print(3)
+    print(1)
+    print(2)
+    print(3)
 
 imprime_1_2_3()  # => 1 2 3
 ```
@@ -40,7 +40,7 @@ Podemos ter funções com múltiplos parâmetros, ou seja, que recebem múltiplo
 
 ```python
 def soma(a, b):
-		return a + b
+    return a + b
 ```
 
 # Argumento vs Parâmetro
@@ -49,7 +49,7 @@ def soma(a, b):
 
 ```python
 def soma(a, b):  # Parâmetros: a, b
-	return a + b
+    return a + b
 
 soma(2, 3)  # Argumentos: 2, 3
 soma(4, 5)  # Argumentos: 4, 5

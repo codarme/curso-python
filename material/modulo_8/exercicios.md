@@ -14,7 +14,7 @@ Implemente um sistema com as seguintes especificações:
     2. Deve ser executado com as instruções abaixo:
     ```python
     u = Usuario("Gabriel", "gabriel@exemplo.com")
-    a = Usuario("Admin", "admin@exemplo.com")
+    a = Administrador("Admin", "admin@exemplo.com")
     u.imprime_usuario()
     # => "Gabriel (gabriel@exemplo.com)
     a.imprime_usuario()
