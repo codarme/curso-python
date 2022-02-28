@@ -14,15 +14,9 @@ def exibir_evento(request, id):
 
 
 def listar_eventos(request):
-    # filter vai incluir apenas os objetos que atendam aos critérios do filtro
-    # eventos = Evento.objects.filter(
-    #     data__gte=date.today()
-    # )
-
-    # exclude vai remover os objetos que atendam aos critérios do filtro
     eventos = Evento.objects.exclude(
         data__lt=date.today()
-    ).order_by("data")
+    )
 
     return render(request, "agenda/listar_eventos.html", context={"eventos": eventos})
 
@@ -37,4 +31,3 @@ def participar_de_evento(request):
         # o POST, o Chrome vai enviar um novo POST (pois "recarregar" na verdade é realizar
         # a última operação bem sucedida).
         return HttpResponseRedirect(reverse('exibir_evento', args=(evento_id,)))
-        # return render(request, "agenda/exibir_evento.html", context={"evento": evento})

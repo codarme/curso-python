@@ -1,4 +1,17 @@
 <html>
+    <head>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+        </style>
+    </head>
     <table>
         <thead>
             <tr>
@@ -15,7 +28,7 @@
                 <td>{{ evento.nome }}</td>
                 <td>{{ evento.categoria.nome }}</td>
                 <td>{% firstof evento.link evento.local %}</td>
-                <td>{{ evento.data | date:"d/m/Y" }}</td>
+                <td>{% if evento.data %}{{ evento.data | date:"d/m/Y" }}{% else %}A definir.{% endif %}</td>
                 <td><a href="{% url 'exibir_evento' evento.id %}">Ver detalhes</a></td>
             </tr>
             {% endfor %}
