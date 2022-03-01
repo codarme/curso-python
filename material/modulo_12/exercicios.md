@@ -29,7 +29,7 @@
            categoria = ...
            return categoria
    ```
-6. **DESAFIO.** Podemos utilizar o método [`order_by(campo)`](https://lucid.app/lucidchart/02718f5c-abb2-4daa-a466-9303072cb322/edit?invitationId=inv_f8eb107e-064b-440b-806b-d26870833b59) onde `campo` é uma string com o nome de um dos campos do nosso modelo para ordenar os resultados de uma consulta de maneira crescente. Também podemos usar `order_by(-campo)` para ordenar de maneira decrescente. Altere a consulta para listar eventos de modo que eles sejam exibidos do mais recente para o mais antigo.
+6. **DESAFIO.** Podemos utilizar o método [`order_by(campo)`](https://lucid.app/lucidchart/02718f5c-abb2-4daa-a466-9303072cb322/edit?invitationId=inv_f8eb107e-064b-440b-806b-d26870833b59) onde `campo` é uma string com o nome de um dos campos do nosso modelo para ordenar os resultados de uma consulta de maneira crescente. Também podemos usar `order_by(-campo)` para ordenar de maneira decrescente. Altere a consulta para listar eventos de modo que eles sejam exibidos do mais próximo para o mais distante (lembrando que eventos que já passaram não devem ser listados).
 7. **DESAFIO.** Na página de detalhes de uma categoria, adicionar um novo parágrafo informando a **quantidade de eventos** com essa categoria.
     Dica:
     ```python
