@@ -4,12 +4,12 @@
 3. Implemente uma classe segundo a especificação em [calculadora_de_notas.py](calculadora_de_notas/calculadora_de_notas.py). Crie um arquivo de testes e adicione casos de teste para os métodos.
 4. *OPCIONAL*. Escolha alguns exercícios já implementados na últimas aulas e tente escrever testes para eles. Preferencialmente crie os arquivos de teste ao lado do módulo com a implementação.
 
-# Testes para o projeto "vamomarcar" (módulo 12)
+## Testes para o projeto "vamomarcar" (módulo 12)
 - Escreva os testes para o sistema implementado no [módulo 12](../modulo_12/exercicios.md).
 - Tanto as `views` quanto os métodos adicionados aos `models` (por exemplo, `Evento.cria_evento`) devem ter testes.
 - Para testar que uma função lançou uma exceção, você pode utilizar: `self.assertRaises(ClasseDaExceção, função, arg1, arg2, ...)`
 
-## Casos de teste
+### Casos de teste
 Você pode pensar em diversos casos de teste para implementar, segue algumas sugestões:
 - Quando não há eventos registrados, `listar_eventos` deve exibir uma tabela vazia (ou contexto vazio).
 - Quando há somente eventos com data no passado registrados, `listar_eventos` deve exibir uma tabela vazia (ou contexto vazio).
