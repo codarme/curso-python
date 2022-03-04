@@ -50,7 +50,7 @@ Implemente as validações abaixo:
 
 Crie uma nova API `GET /horarios/?data=YYYY-MM-DD` que retorna a lista de horários disponíveis para um determinado dia (data) de uma loja que presta um único tipo de serviço.
 
-** Regras de Negócio**
+**Regras de Negócio**
 
 * A loja abre às 09h00 e fecha às 18h00. Ou seja, o primeiro horário disponível é de 09h00 às 9h30 e o último de 17h30 às 18h00.
 * O horário de almoço é de 12h00 às 13h00, entre esses horários não deve haver a prestação de serviços.
@@ -59,7 +59,8 @@ Crie uma nova API `GET /horarios/?data=YYYY-MM-DD` que retorna a lista de horár
 * (DESAFIO) Aos Sábados, a loja abre às 09h00 e fecha às 13h00 e não tem horário de almoço.
 
 
-** Detalhes de implementação**
+**Detalhes de implementação**
+
 URLs podem conter o que chamamos de `query params` ou `parâmetros da consulta`. Esses parâmetros são adicionados ao fim da URL e separados da URL por um `?`.
 
 Podemos utilizar o atributo [`request.query_params`](https://www.django-rest-framework.org/api-guide/requests/#query_params) para obter um dicionário com `query params` da URL. Os valores dos parâmetros vêm como `string`, então precisamos converter para o tipo desejado.
