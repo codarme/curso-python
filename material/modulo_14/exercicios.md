@@ -3,7 +3,7 @@
 
 ### Exercício 1 – Git e GitHub
 
-Crie um repositório no GitHub e faça "push" do seu projeto Django.
+Crie um repositório no GitHub e faça "push" do seu projeto Django com os arquivos iniciais do projeto "tamarcado". Lembre-se de adicionar arquivos desnecessários ao `.gitignore` (`.sqlite3`, `venv`, `__pycache__`, ...).
 
 
 ### Exercício 2 – Shell e Django Admin
