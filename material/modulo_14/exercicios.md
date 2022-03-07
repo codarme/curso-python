@@ -50,7 +50,7 @@ Implemente as validações abaixo:
 
 Crie uma nova API `GET /horarios/?data=YYYY-MM-DD` que retorna a lista de horários disponíveis para um determinado dia (data) de uma loja que presta um único tipo de serviço.
 
-**Regras de Negócio**
+#### Regras de Negócio
 
 * A loja abre às 09h00 e fecha às 18h00. Ou seja, o primeiro horário disponível é de 09h00 às 9h30 e o último de 17h30 às 18h00.
 * O horário de almoço é de 12h00 às 13h00, entre esses horários não deve haver a prestação de serviços.
@@ -59,7 +59,9 @@ Crie uma nova API `GET /horarios/?data=YYYY-MM-DD` que retorna a lista de horár
 * (DESAFIO) Aos Sábados, a loja abre às 09h00 e fecha às 13h00 e não tem horário de almoço.
 
 
-**Detalhes de implementação**
+#### Detalhes de implementação
+
+**Query Params e Conversão para Date**
 
 URLs podem conter o que chamamos de `query params` ou `parâmetros da consulta`. Esses parâmetros são adicionados ao fim da URL e separados da URL por um `?`.
 
@@ -76,11 +78,34 @@ def listar_horarios(request):
     ...
 ```
 
+---
+
+**Filtrando date de campo DateTimeField**
+
 Podemos utilizar o filter da seguinte maneira para comparar um `DateTimeField` com um objeto do tipo `date`:
 ```python
 # Buscar agendamentos com data_horario cujo dia seja igual a 20 de Março de 2022
 Agendamento.objects.filter(data_horario__date=date(2022, 3, 20))
 ```
+
+---
+
+**Atenção aos fuso-horários**
+
+Objetos `datetime` podem ter um fuso-horário especificado através do parâmetro opcional `tzinfo`
+```python
+from datetime import datetime, timezone
+
+dt_com_timezone = datetime(2022, 03, 20, tzinfo=timezone.utc)
+dt_sem_timezone = datetime(2022, 03, 20)
+
+
+assert dt_com_timezone == dt_sem_timezone  # Vai falhar! São considerados diferentes
+```
+
+---
+
+**Dia da semana**
 
 Para saber o **dia da semana** de uma data, podemos utilizar o método `date.weekday()`, que retorna um **inteiro** representando o dia da semana, segundo a tabela abaixo:
 
