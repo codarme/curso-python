@@ -76,6 +76,12 @@ def listar_horarios(request):
     ...
 ```
 
+Podemos utilizar o filter da seguinte maneira para comparar um `DateTimeField` com um objeto do tipo `date`:
+```python
+# Buscar agendamentos com data_horario cujo dia seja igual a 20 de Março de 2022
+Agendamento.objects.filter(data_horario__date=date(2022, 3, 20))
+```
+
 Para saber o **dia da semana** de uma data, podemos utilizar o método `date.weekday()`, que retorna um **inteiro** representando o dia da semana, segundo a tabela abaixo:
 
 | weekday() | dia da semana |
