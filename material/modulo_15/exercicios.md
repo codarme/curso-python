@@ -102,6 +102,42 @@ Adicione permissões às views de modo que as seguintes regras sejam respeitadas
 - Apenas um usuário autenticado pode ver a listagem de agendamentos dele. Usuários, autenticados ou não, não podem acessar a listagem de agendamentos de outros usuários.
 
 
+## Exercício 8 – Testes para Permissões
+
+Atualize os testes que estiverem falhando e adicione novos casos de testes para as permissões utilizadas. Exemplos:
+- Usuária "alice" não deve ter acesso a listagem de agendamentos do usuário "bob";
+- Usuário "alice" deve conseguir visualizar agendamentos associados à ela – tanto listagem quanto individualmente.
+
+Você provavelmente vai precisar criar instâncias da classe `User` (importada de `django.contrib.auth.models.User) e **autenticar** essas instâncias para conseguir fazer a requsição.
+
+A maneira mais simples de autenticar um usuário nos testes é utilizando o método `client.force_authenticate(request, user)`:
+```python
+from rest_framework.test import APIClient
+
+client = APIClient()
+client.force_authenticate(user)
+cliente.get(...)
+```
+
+Ou, dentro de uma classe que herda de APITestCase:
+```python
+class TestListagemAgendamentos(APITestCase):
+    def test_listagem(self):
+        user = User.objects.create(email="bob@email.com", username="bob", password="123")
+        self.client.force_authenticate(user)
+        self.client.get("/api/agendamentos/?username=bob")
+```
+
+E outra opção é você realizar o `login`:
+```python
+class TestListagemAgendamentos(APITestCase):
+    def test_listagem(self):
+        user = User.objects.create(email="bob@email.com", username="bob", password="123")
+        self.client.login(username="bob", password="123")
+        self.client.get("/api/agendamentos/?username=bob")
+```
+
+
 # Projeto Final
 
 Aqui listamos algumas sugestões de funcionalidades que poderíamos adicionar ao nosso projeto. Provavelmente você vai precisar pesquisar na documentação do Django Rest Framework para implementar algumas delas e é altamente recomendado que pessa ajuda na nossa comunidade do Discord!
