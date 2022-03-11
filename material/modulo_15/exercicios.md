@@ -138,6 +138,17 @@ class TestListagemAgendamentos(APITestCase):
 ```
 
 
+## Exercício 9 – Listagem de prestadores e agendamentos
+
+Faça a implementação de uma view que liste todos os prestadores de serviço cadastrados e seus respectivos agendamentos.
+
+Os agendamentos devem ser serializados da mesma maneira que na listagem de agendamentos (ou seja, não é para exibir apenas o *id*, mas sim a representação do objeto como JSON).
+
+Essa view deve ser acessada **somente por administradores** (superuser).
+
+> Dica: dê uma olhada nas [permissões do Django Rest Framework](https://www.django-rest-framework.org/api-guide/permissions/#isadminuser)
+
+
 # Projeto Final
 
 Aqui listamos algumas sugestões de funcionalidades que poderíamos adicionar ao nosso projeto. Provavelmente você vai precisar pesquisar na documentação do Django Rest Framework para implementar algumas delas e é altamente recomendado que pessa ajuda na nossa comunidade do Discord!
