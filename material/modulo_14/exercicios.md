@@ -55,7 +55,7 @@ Crie uma nova API `GET /horarios/?data=YYYY-MM-DD` que retorna a lista de horár
 * A loja abre às 09h00 e fecha às 18h00. Ou seja, o primeiro horário disponível é de 09h00 às 9h30 e o último de 17h30 às 18h00.
 * O horário de almoço é de 12h00 às 13h00, entre esses horários não deve haver a prestação de serviços.
 * Quando agendamentos são realizados para um determinado horário em uma certa data, aquele horário não deve mais estar disponível.
-* Agendamentos podem ser cancelados, o que faz com que o horário do agendamento se torna novamente disponível.
+* Agendamentos podem ser cancelados, o que faz com que o horário do agendamento se torne novamente disponível.
 * (DESAFIO) Aos Sábados, a loja abre às 09h00 e fecha às 13h00 e não tem horário de almoço.
 
 
@@ -96,8 +96,8 @@ Objetos `datetime` podem ter um fuso-horário especificado através do parâmetr
 ```python
 from datetime import datetime, timezone
 
-dt_com_timezone = datetime(2022, 03, 20, tzinfo=timezone.utc)
-dt_sem_timezone = datetime(2022, 03, 20)
+dt_com_timezone = datetime(2022, 3, 20, tzinfo=timezone.utc)
+dt_sem_timezone = datetime(2022, 3, 20)
 
 
 assert dt_com_timezone == dt_sem_timezone  # Vai falhar! São considerados diferentes
