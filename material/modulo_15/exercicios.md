@@ -61,6 +61,20 @@ Após escrever testes para as views de Agendamento (`/api/agendamentos/` e `/api
 
 Reescreva as CBV utilizando Generic Views. Escolha a Generic View apropriada: as que já estão implementadas pelo Django Rest Framework podem ser encontradas [na documentação](https://www.django-rest-framework.org/api-guide/generic-views/#concrete-view-classes).
 
+> Se você implementou comportamento customizado para alguma das operações, como por exemplo, definir `agendamento.cancelado = True` para a operação `DELETE` ao invés de deletar a instância, você vai precisar sobrescrever o método `perform_destroy(self, instance)` em `AgendamentoDetail`.
+
+```python
+class AgendamentoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Agendamento.objects.all()
+    serializer_class = AgendamentoSerializer
+
+    def perform_destroy(self, instance):
+        instance.cancelado = True
+        instance.save()
+```
+
+Você pode ler mais sobre os métodos de APIs genéricas (`GenericAPIView`) na [documentação](https://www.django-rest-framework.org/api-guide/generic-views/#methods).
+
 
 ## Exercício 6 – Associação entre Usuário (prestador) e Agendamento
 
