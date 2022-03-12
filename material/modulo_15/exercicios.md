@@ -101,7 +101,7 @@ Body:
 }
 ```
 
-> Após criar essa associação, vai ser necessário atualizar os testes, pois antes as instâncias de `Agendamento` não eram associadas a um `User`.
+> Após criar essa associação, vai ser necessário atualizar os testes, pois antes as instâncias de `Agendamento` não eram associadas a um `User`. Para ver exemplos de como criar uma instância de `User` via código, acesse [a documentação](https://docs.djangoproject.com/pt-br/4.0/topics/auth/default/#creating-users)
 
 
 ## Exercício 7 – Autenticação e Autorização
