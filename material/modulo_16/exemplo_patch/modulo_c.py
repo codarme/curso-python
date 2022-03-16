@@ -1,4 +1,4 @@
-from exemplo_patch import modulo_b
+import modulo_b
 
 def foo_modulo_c():
     print("modulo_c.py")

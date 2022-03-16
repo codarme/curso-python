@@ -2,7 +2,7 @@
 Esse arquivo é uma breve demonstração sobre o problema de "onde fazer o patch" quando
 estamos escrevendo testes para Python.
 
-Para executá-lo, a partir da raíz modulo_16/, execute: python3 tests.py
+Para executá-lo, execute "python3 tests.py"
 
 Um dos testes falha propositalmente.
 
@@ -11,11 +11,11 @@ https://docs.python.org/3/library/unittest.mock.html#where-to-patch
 """
 from unittest import main, TestCase, mock
 
-from exemplo_patch import modulo_a, modulo_c
+import modulo_a, modulo_c
 
 
 class TestModuloA(TestCase):
-    @mock.patch("exemplo_patch.modulo_a.foo_modulo_b", return_value="mockado!")
+    @mock.patch("modulo_a.foo_modulo_b", return_value="mockado!")
     def test_mock_modulo_b_corretamente(self, mock_b):
         """
         Observe que estamos executando o modulo_a.foo_modulo_a
@@ -25,7 +25,7 @@ class TestModuloA(TestCase):
         response = modulo_a.foo_modulo_a()
         self.assertEqual(response, "mockado!")
 
-    @mock.patch("exemplo_patch.modulo_b.foo_modulo_b", return_value="mockado!")
+    @mock.patch("modulo_b.foo_modulo_b", return_value="mockado!")
     def test_mock_modulo_b_errado(self, mock_b):
         """
         Nesse caso, tentamos fazer o patch de "foo_modulo_b" onde ele é definido,
@@ -38,7 +38,7 @@ class TestModuloA(TestCase):
 
 
 class TestModuloC(TestCase):
-    @mock.patch("exemplo_patch.modulo_c.modulo_b")
+    @mock.patch("modulo_c.modulo_b")
     def test_mock_modulo_b_corretamente(self, mock_b):
         """
         O "modulo_c" importa o "modulo_b" completamente. Logo, temos que fazer o patch

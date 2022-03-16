@@ -1,4 +1,4 @@
-from .modulo_b import foo_modulo_b
+from modulo_b import foo_modulo_b
 
 
 def foo_modulo_a():
