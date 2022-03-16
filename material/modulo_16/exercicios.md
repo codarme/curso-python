@@ -123,7 +123,7 @@ Altere o código que utiliza a BrasilAPI de modo que, caso ocorra um erro na req
 Crie um arquivo de requirements para o ambiente de desenvolvimento e um para o ambiente de produção.
 
 
-# **DESAFIO**: Adicionando endereço ao Prestador
+# Projeto Final: Adicionando endereço ao Prestador
 
 Prestadores de serviço podem ter um `Endereço` associado. O modelo `Endereço` deve possuir:
 - CEP
