@@ -102,6 +102,7 @@ Body:
 ```
 
 > Após criar essa associação, vai ser necessário atualizar os testes, pois antes as instâncias de `Agendamento` não eram associadas a um `User`. Para ver exemplos de como criar uma instância de `User` via código, acesse [a documentação](https://docs.djangoproject.com/pt-br/4.0/topics/auth/default/#creating-users)
+> Também será necessário atualizar a funcionalidade de listar horários disponíveis, pois agora ela deve considerar que cada prestador tem sua própria agenda, ou seja, se houver um Agendamento às 9h00 para a prestadora "Alice", o horário de 9h00 continua disponível na agenda do prestador "Bob".
 
 
 ## Exercício 7 – Autenticação e Autorização
