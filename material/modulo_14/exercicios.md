@@ -118,3 +118,9 @@ Para saber o **dia da semana** de uma data, podemos utilizar o método `date.wee
 | 4         | Sexta-feira   |
 | 5         | Sábado        |
 | 6         | Domingo       |
+
+---
+
+**Uma ajudinha**
+
+[Esse gist](https://gist.github.com/gcrsaldanha/6841e0ddabe863688b8d0e4b56239deb) tem um breve exemplo sobre como utilizar `datetime` e `timedelta` para gerar um novo `datetime`.
