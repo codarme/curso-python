@@ -26,7 +26,6 @@ Os exercícios podem ser acessados [aqui](./exercícios.md).
 - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 - [GitHub Actions](https://docs.github.com/pt/actions)
 - [Diferentes fluxos de trabalho no Git](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-- 
 
 
 ### Bibliotecas utilizadas
