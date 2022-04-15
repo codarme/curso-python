@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .  # docker build .
+    ports:  # --publish 8000:8000
+      - 8000:8000
+    volumes:
+      - agenda-db:/app  # persistir o nosso banco
+      - ./agenda:/app/agenda
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000" # CMD
+    env_file:
+      - ./.docker.env
+  redis:  # alias: redis
+    image: redis:alpine
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    ports:
+      - 8025:8025
+  celery:
+    build:
+      context: .
+    command: celery -A tamarcado worker -Q celery --loglevel=INFO
+    env_file:
+      - ./.docker.env
+    depends_on:
+      - app
+      - redis
+volumes:
+  agenda-db:
