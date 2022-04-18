@@ -58,6 +58,7 @@ O currículo não serve apenas para **conseguir** a entrevista, mas também para
 ## Template de currículo
 
 * [Google Docs](https://curriculo.saldanha.dev)
+  * [Link direto](https://docs.google.com/document/d/1AfoaSrmrObGCHYz4eYrOQMLgK8dWLRVJ8AnvTLMVVOY/edit?usp=sharing)
 * [Notion (inglês)](https://www.notion.so/Gabriel-Saldanha-eb1901665721483185405a78aaba356e)
 
 > Dica: utilizando o Notion, você pode exportar o seu currículo como `Markdown` e subir em um repositório no GitHub ou Gist. Porém, eu ainda prefiro a versão do Google Docs ;)
