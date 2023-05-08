@@ -9,7 +9,7 @@ Implemente um sistema com as seguintes especificações:
 2. Módulo `administrador.py`
     1. Deve conter uma classe `Administrador` que estende (herda de) `Usuario`.
     2. Deve *sobrescrever* o método `imprime_usuario` e imprimir: "Gabriel (gabriel@exemplo.com) – Administrador", para uma instância com `nome = "Gabriel"` e `email = "gabriel@exemplo.com”`
-3. Módulo `main.py``
+3. Módulo `main.py`
     1. Deve importar os módulos `usuario.py` e `administrador.py`.
     2. Deve ser executado com as instruções abaixo:
     ```python
